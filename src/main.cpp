@@ -6,10 +6,12 @@ int main(int argc, char **argv)
   ros::NodeHandle node_;
 
   //GuidanceSensors* mGuidanceSensors = new GuidanceSensors( node_ );
-  int camNums[2];
-  camNums[0] = 0;
-  camNums[1] = 1;
-  GuidanceSensors* mGuidanceSensors = new GuidanceSensors( node_, 2, camNums );
+  int camNums[5];
+  for( int i=0; i<5; i++ )
+  {
+    camNums[i] = i;
+  }
+  GuidanceSensors* mGuidanceSensors = new GuidanceSensors( node_, 5, camNums );
   if ( mGuidanceSensors->startSampleData() == -1 )
   {
     delete mGuidanceSensors;

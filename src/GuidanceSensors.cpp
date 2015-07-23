@@ -355,7 +355,6 @@ void GuidanceSensors::publishSonar( sonar_data* sonar )
     sonarTopic[camIdx].msg.reliability = sonar[camIdx].reliability;
 
     sonarTopic[camIdx].sonarPub.publish( sonarTopic[camIdx].msg );
-    fprintf(stderr, "Publishing sonar: %d\n\r",camIdx);
   }
 }
 

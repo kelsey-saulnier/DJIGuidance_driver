@@ -1,0 +1,13 @@
+<launch>
+
+  <!-- Launch vicon odometry node -->
+  <arg name="vicon_fps" value="100"/>
+  <include file="$(find vicon)/launch/vicon.launch"/>
+  <include file="$(find vicon_odom)/launch/ViconOdom.launch">
+    <arg name="model" value="DJIGuidance" />
+  </include>
+  <include file="$(find vicon_odom)/launch/ViconOdom.launch">
+    <arg name="model" value="DJITableTest" />
+  </include>
+
+</launch>
